@@ -1,0 +1,80 @@
+<div style="padding: 10px; width: 500px">
+  <div class="heading">Text Input</div>
+  <div>
+    <div>
+      <div>Enter the Label for Text Input</div>
+      <mat-form-field
+        class="example-full-width"
+        appearance="outline"
+        style="width: 100%"
+      >
+        <mat-label></mat-label>
+        <input matInput [(ngModel)]="labelInput" />
+      </mat-form-field>
+    </div>
+    <div>
+      <div>Enter the Placeholder for Text Input</div>
+      <mat-form-field
+        class="example-full-width"
+        appearance="outline"
+        style="width: 100%"
+      >
+        <mat-label></mat-label>
+        <input matInput [(ngModel)]="placeholderInput" />
+      </mat-form-field>
+    </div>
+    <div>
+      <div>Is Required ?</div>
+      <mat-radio-group
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+        [(ngModel)]="favoriteSeason"
+        (change)="requiredoption($event)"
+      >
+        <mat-radio-button
+          class="example-radio-button"
+          *ngFor="let type of requiredType"
+          [value]="type"
+          style="padding: 10px"
+        >
+          {{ type }}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div>
+
+  <div *ngIf="labelInput">
+    <div>
+      <div class="heading">Preview</div>
+
+      <div>
+        <div style="text-transform: uppercase; padding: 5px">
+          {{ labelInput }} <span *ngIf="required">*</span>
+        </div>
+        <mat-form-field
+          class="example-full-width"
+          appearance="outline"
+          style="width: 100%"
+        >
+          <mat-label>{{ labelInput }}</mat-label>
+          <input matInput placeholder="{{ placeholderInput }}" />
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: flex-end">
+    <button mat-raised-button color="warn" style="margin: 10px">Cancel</button>
+    <button
+      mat-raised-button
+      style="
+        background: #00bb0e;
+        color: white;
+        /* padding: 10px; */
+        margin: 10px;
+      "
+     (click)="addToArray()">
+      Add to From
+    </button>
+  </div>
+</div>

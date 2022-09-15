@@ -1,0 +1,74 @@
+<div style="padding: 10px; width: 500px">
+  <div class="heading">Check Box</div>
+  <div>
+    <div>Enter the Heading for Check Box</div>
+    <mat-form-field
+      class="example-full-width"
+      appearance="outline"
+      style="width: 100%"
+    >
+      <mat-label></mat-label>
+      <input matInput [(ngModel)]="labelInput" />
+    </mat-form-field>
+  </div>
+
+  <div style="display: flex; justify-content: start;align-items: center;">
+    <div class="enter_option">Enter Option</div>
+    <div>
+      <mat-form-field
+      class="example-full-width"
+      appearance="outline"
+      style="width: 100%"
+    >
+      <mat-label></mat-label>
+      <input matInput [(ngModel)]="checkboxOption" />
+    </mat-form-field>
+    </div>
+    <div>
+      <button  mat-raised-button class="radio_but" (click)="addtoCheckBoxButton()">Add Option</button>
+
+    </div>
+
+  </div>
+
+
+  <div *ngIf="labelInput">
+    <div class="heading">Preview</div>
+
+    <div>
+      <div class="enter_option">{{labelInput}}</div>
+      <mat-radio-group
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+
+
+      >
+
+      </mat-radio-group>
+      <section class="example-section" *ngFor="let item of CheckBoxButtons">
+        <mat-checkbox class="example-margin">{{item}}</mat-checkbox>
+
+      </section>
+    </div>
+
+
+
+  </div>
+
+  <div style="display: flex; justify-content: flex-end">
+    <button mat-raised-button color="warn" style="margin: 10px">Cancel</button>
+    <button
+      mat-raised-button
+      style="
+        background: #00bb0e;
+        color: white;
+        /* padding: 10px; */
+        margin: 10px;
+      "
+     (click)="addToArray()">
+      Add to From
+    </button>
+  </div>
+
+
+</div>
