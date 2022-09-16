@@ -1,0 +1,54 @@
+<div class="wrapper">
+  <div class="title">
+    CSS Table
+    <div class="line"></div>
+  </div>
+  <div class="container">
+    <div class="table">
+      <table>
+        <thead>
+          <tr >
+            <td *ngFor="let val1 of tableheads"> {{val1}}</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let val of tablebody">
+            <td >{{val.tableheads[0]}}</td>
+
+          </tr>
+          <tr>
+            <td>adadss@sdadsa.me</td>
+            <td>Lorem Nienow</td>
+            <td>daLorem.t</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>dasdas@dsd.me</td>
+            <td>Maxime Lorem</td>
+            <td>Maximeda.L</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>test@testa.me</td>
+            <td>Maxime Nienow</td>
+            <td>Adminsda.a</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>adadss@sdadsa.me</td>
+            <td>Lorem Nienow</td>
+            <td>daLorem.t</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>dasdas@dsd.me</td>
+            <td>Maxime Lorem</td>
+            <td>Maximeda.L</td>
+            <td>6</td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>

@@ -39,8 +39,8 @@ export class CheckboxInputComponent implements OnInit {
       if(this.CheckBoxButtons.length >= 2){
         let obj = {
           'label': this.labelInput,
-            'input-type': 'checkbox',
-            'required':"false",
+            'input': 'checkbox',
+            'required':false,
             'values':[...this.CheckBoxButtons]
 
 

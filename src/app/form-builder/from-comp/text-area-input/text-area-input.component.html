@@ -57,7 +57,11 @@
           style="width: 100%"
         >
           <mat-label>{{ labelInput }}</mat-label>
-          <textarea matInput placeholder="{{ placeholderInput }}" style="height: 60px;"></textarea>
+          <textarea
+            matInput
+            placeholder="{{ placeholderInput }}"
+            style="height: 60px"
+          ></textarea>
         </mat-form-field>
       </div>
     </div>
@@ -73,7 +77,8 @@
         /* padding: 10px; */
         margin: 10px;
       "
-     (click)="addToArray()">
+      (click)="addToArray()"
+    >
       Add to From
     </button>
   </div>

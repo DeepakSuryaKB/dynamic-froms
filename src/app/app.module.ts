@@ -17,6 +17,12 @@ import { TextAreaInputComponent } from './form-builder/from-comp/text-area-input
 import {MatButtonModule} from '@angular/material/button';// <--- import FormsModule
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatCardModule} from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './pages/home/home.component';
+import { DynamicFormComponent } from './pages/dynamic-form/dynamic-form.component';
+import { FormsDataComponent } from './pages/forms-data/forms-data.component';
+import {ClipboardModule} from '@angular/cdk/clipboard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,9 +30,15 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     TextInputComponent,
     RadioInputComponent,
     CheckboxInputComponent,
-    TextAreaInputComponent
+    TextAreaInputComponent,
+    HomeComponent,
+    DynamicFormComponent,
+    FormsDataComponent
   ],
   imports: [
+    ClipboardModule,
+    HttpClientModule,
+    MatCardModule,
     MatSnackBarModule,
     MatCheckboxModule,
     MatButtonModule,

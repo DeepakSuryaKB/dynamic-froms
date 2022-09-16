@@ -35,12 +35,12 @@ export class TextAreaInputComponent implements OnInit {
     if(this.labelInput != '' && this.labelInput != null){
       let obj:any = {
         'label': this.labelInput,
-        'input-type': 'text-input',
+        'input': 'text-area',
         'placeholder': this.placeholderInput,
-        'required':"false"
+        'required':false
       };
       if(this.required){
-        obj["required"]="true"
+        obj["required"]=true
 
       }
       this.formService.getCurrentFromObject(obj);

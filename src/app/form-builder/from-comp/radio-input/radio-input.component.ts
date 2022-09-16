@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { FormServiceService } from 'src/app/service/form-service.service';
 
 @Component({
   selector: 'app-radio-input',
@@ -15,7 +16,7 @@ export class RadioInputComponent implements OnInit {
   radioButtons: string[] = [];
   required: any = false;
 
-  constructor(private _snackBar: MatSnackBar) { }
+  constructor(private _snackBar: MatSnackBar,public formService:FormServiceService) { }
 
   ngOnInit(): void {
   }
@@ -51,12 +52,13 @@ export class RadioInputComponent implements OnInit {
       if(this.radioButtons.length >= 2){
         let obj = {
           'label': this.labelInput,
-            'input-type': 'radio',
-            'required':"false",
+            'input': 'radio',
+            'required':false,
             'values':[...this.radioButtons]
 
 
         }
+        this.formService.getCurrentFromObject(obj);
         console.log("obj",obj);
 
 

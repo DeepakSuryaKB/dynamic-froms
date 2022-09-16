@@ -1,0 +1,35 @@
+<div class="heading" style="padding-top: 5px" *ngIf="allForms.length > 0">
+  Availabe Forms
+</div>
+
+<div
+  *ngFor="let data of allForms"
+  style="width: 30%; margin: auto; padding: 10px"
+>
+  <mat-card
+    style="display: flex; justify-content: space-between; align-items: center"
+  >
+    <div class="form-name">{{data?.form_name}}</div>
+    <div>
+      <button mat-button (click)="formlink(data)" >Copy Form Link</button>
+      <button mat-button (click)="viewdata(data)">View Sumbitted Data</button>
+    </div>
+  </mat-card>
+</div>
+
+<div *ngIf="allForms.length == 0" class="heading">
+  No Froms are availabe Create New Froms now
+</div>
+
+<button
+      mat-raised-button
+      style="
+        background: #00bb0e;
+        color: white;
+        /* padding: 10px; */
+        margin: auto;
+        display: flex;
+      "
+     (click)="createNewForm()">
+      Create New From
+    </button>
