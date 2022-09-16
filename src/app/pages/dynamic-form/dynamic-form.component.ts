@@ -62,7 +62,16 @@ export class DynamicFormComponent implements OnInit {
   }
 
   submitForm(){
-    console.log("from submit",this.myform.value);
+    console.log("from submit before",this.myform.value);
+    for (var key in this.myform.value) {
+      if (this.myform.value.hasOwnProperty(key)) {
+          console.log(key + " -> " + this.myform.value[key]);
+          if(this.myform.value[key] == ''){
+            this.myform.value[key] = '-'
+          }
+      }
+  }
+  //console.log("from submit after",this.myform.value);
     let obj ={
       form_name:this.formname,
       data:JSON.stringify(this.myform.value)
