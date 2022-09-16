@@ -39,5 +39,10 @@ export class FormServiceService {
 
   }
 
+  deleteParticaulatEnrty(id : any){
+    return this.http.get(`${this.base_url}from/data/${id}`)
+
+  }
+
 
 }

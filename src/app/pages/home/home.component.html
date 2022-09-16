@@ -1,4 +1,4 @@
-<div class="heading" style="padding-top: 5px" *ngIf="allForms.length > 0">
+<!-- <div class="heading" style="padding-top: 5px" *ngIf="allForms.length > 0">
   Availabe Forms
 </div>
 
@@ -32,4 +32,54 @@
       "
      (click)="createNewForm()">
       Create New From
-    </button>
+    </button> -->
+
+
+    <div class="wrapper" *ngIf="allForms.length > 0">
+      <div class="title">
+        Availabe Forms
+        <div class="line"></div>
+      </div>
+      <div class="container">
+        <div class="table">
+          <table>
+            <thead>
+              <tr >
+                <td style="text-align: center;"> From Name</td>
+                <td style="text-align: center;">Copy Form Link</td>
+                <td style="text-align: center;">View Data</td>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr  *ngFor="let data of allForms">
+                <td style="text-align: center;">{{data?.form_name}}</td>
+                <td style="text-align: center;"><button mat-button (click)="formlink(data)" ><span class="material-icons">content_copy</span></button></td>
+                <td style="text-align: center;">  <button mat-button (click)="viewdata(data)"><span class="material-icons">visibility</span></button></td>
+
+
+
+
+              </tr>
+
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+      <div style="padding-top: 10px;">
+        <button
+        mat-raised-button
+        style="
+
+
+          margin: auto;
+          display: flex;
+        "
+       (click)="createNewForm()">
+        Create New From
+      </button>
+
+      </div>
+
+    </div>

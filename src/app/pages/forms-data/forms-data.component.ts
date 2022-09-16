@@ -12,6 +12,7 @@ export class FormsDataComponent implements OnInit {
   id:any;
   tableheads:any[]=[];
   tablebody:any[]=[];
+  tableName:any;
   constructor(private route: ActivatedRoute, private formservice:FormServiceService,private router:Router) { }
 
   ngOnInit(): void {
@@ -29,6 +30,7 @@ export class FormsDataComponent implements OnInit {
         this.router.navigateByUrl('/');
 
       }
+      this.tableName = data.data[0].form_name
       console.log("JSON.parse(data.data[0]))",JSON.parse(data.data[0].data));
       let headdata:any = JSON.parse(data.data[0].data)
 

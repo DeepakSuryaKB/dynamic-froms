@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="title">
-    CSS Table
+    {{tableName}} Data
     <div class="line"></div>
   </div>
   <div class="container">
@@ -9,43 +9,20 @@
         <thead>
           <tr >
             <td *ngFor="let val1 of tableheads"> {{val1}}</td>
+
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let val of tablebody">
-            <td >{{val.tableheads[0]}}</td>
+          <tr *ngFor="let objects of tablebody">
+            <ng-container
+            *ngFor="let val of objects| keyvalue">
+            <td>{{val.value}}</td>
+
+          </ng-container>
+
 
           </tr>
-          <tr>
-            <td>adadss@sdadsa.me</td>
-            <td>Lorem Nienow</td>
-            <td>daLorem.t</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td>dasdas@dsd.me</td>
-            <td>Maxime Lorem</td>
-            <td>Maximeda.L</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>test@testa.me</td>
-            <td>Maxime Nienow</td>
-            <td>Adminsda.a</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>adadss@sdadsa.me</td>
-            <td>Lorem Nienow</td>
-            <td>daLorem.t</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <td>dasdas@dsd.me</td>
-            <td>Maxime Lorem</td>
-            <td>Maximeda.L</td>
-            <td>6</td>
-          </tr>
+
         </tbody>
 
       </table>

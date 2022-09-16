@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { FormServiceService } from '../service/form-service.service';
 import { CheckboxInputComponent } from './from-comp/checkbox-input/checkbox-input.component';
 import { RadioInputComponent } from './from-comp/radio-input/radio-input.component';
@@ -17,7 +18,7 @@ export class FormBuilderComponent implements OnInit {
   Fromname:any;
 type: any;
 
-  constructor(public dialog:MatDialog,public formService:FormServiceService,public _snackBar:MatSnackBar) { }
+  constructor(public dialog:MatDialog,public formService:FormServiceService,public _snackBar:MatSnackBar,public router:Router) { }
 
   ngOnInit(): void {
 
@@ -68,9 +69,13 @@ type: any;
       }
       this.formService.createForm(obj).subscribe((data:any)=>{
         console.log("data is ",data);
+        this._snackBar.open('Form Created', 'ok');
+        this.router.navigateByUrl('/');
+
 
 
       },(err)=>{
+        this._snackBar.open('Error Creating Form', 'ok');
         console.log("err is ",err);
 
       })
